@@ -11,9 +11,11 @@ from pyomo.core.expr.current import identify_variables
 
 import sys
 
-sys.path.append('../methods')
+sys.path.append('../MOMIRROA_methods')
+sys.path.append('../MOMIBB_methods')
 
-from compute_enclosure import *
+from MOMIRROA import *
+from MOMIBB_direct import *
 
 """
 problem instance (P3) with k=6 and n=2 from
@@ -65,7 +67,7 @@ def build_model(m):
 parameter = structure()
 parameter.m = 2
 parameter.tol = 0.1
-parameter.maxiter = 1000
+parameter.maxiter = 10000
 parameter.timeout = 3600
 parameter.factor_delta = 0.95 * parameter.tol
 
@@ -87,11 +89,20 @@ options.nlp_feasibility_only = False
 options.constraint_tolerance = 1e-4
 
 # determine if adaptive refinement procedure should be applied
-options.adaptive_refinement = True
+options.adaptive_refinement = False
 # determine if (and when) OBBT should be applied
-options.bound_tightening = 3
+options.bound_tightening = 1e20
 
 # determine if new utopian should be required to be not included in current utopians
 options.soft_utopian_check = True
 
-encl_dict, it = compute_enclosure(build_model, parameter, options)
+options.method = 'Nothing' # determine which method should be applied
+
+
+if options.method == 'MOMIRROA':
+    print('MOMIRROA is chosen for computing an enclosure')
+    encl_dict, it = MOMIRROA(build_model, parameter, options)
+
+elif options.method == 'MOMIBB':
+    print('MOMIBB direct is chosen for computing an enclosure')
+    encl_dict, it = MOMIBB_direct(build_model, parameter, options)

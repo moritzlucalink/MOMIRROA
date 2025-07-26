@@ -11,9 +11,11 @@ from pyomo.core.expr.current import identify_variables
 
 import sys
 
-sys.path.append('../methods')
+sys.path.append('../MOMIRROA_methods')
+sys.path.append('../MOMIBB_methods')
 
-from compute_enclosure import *
+from MOMIRROA import *
+from MOMIBB_direct import *
 
 """
 problem instance (P3) with k=4 and n=4 from
@@ -73,7 +75,7 @@ parameter.factor_delta = 0.95 * parameter.tol
 options = structure()
 
 # determine if relaxations should be used
-options.solve_direct = False
+options.solve_direct = True
 # determine the gap if no relaxations are used
 options.gap_tolerance = 5e-2
 
@@ -94,4 +96,4 @@ options.bound_tightening = 3
 # determine if new utopian should be required to be not included in current utopians
 options.soft_utopian_check = True
 
-encl_dict, it = compute_enclosure(build_model, parameter, options)
+# encl_dict, it = compute_enclosure(build_model, parameter, options)

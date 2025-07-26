@@ -11,9 +11,11 @@ from pyomo.core.expr.current import identify_variables
 
 import sys
 
-sys.path.append('../methods')
+sys.path.append('../MOMIRROA_methods')
+sys.path.append('../MOMIBB_methods')
 
-from compute_enclosure import *
+from MOMIRROA import *
+from MOMIBB_direct import *
 
 
 """
@@ -95,4 +97,4 @@ options.adaptive_refinement = False
 # determine if new utopian should be required to be not included in current utopians
 options.soft_utopian_check = True
 
-encl_dict, it = compute_enclosure(build_model, parameter, options)
+# encl_dict, it = compute_enclosure(build_model, parameter, options)

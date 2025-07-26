@@ -11,9 +11,12 @@ from pyomo.core.expr.current import identify_variables
 
 import sys
 
-sys.path.append('../methods')
+sys.path.append('../MOMIRROA_methods')
+sys.path.append('../MOMIBB_methods')
 
-from compute_enclosure import *
+from MOMIRROA import *
+from MOMIBB_direct import *
+
 
 """
 problem instance (P3) with k=8 and n=6 from
@@ -78,7 +81,7 @@ def build_model(m):
 parameter = structure()
 parameter.m = 2
 parameter.tol = 0.1
-parameter.maxiter = 1000
+parameter.maxiter = 20000
 parameter.timeout = 3600
 parameter.factor_delta = 0.95 * parameter.tol
 
@@ -107,4 +110,12 @@ options.bound_tightening = 3
 # determine if new utopian should be required to be not included in current utopians
 options.soft_utopian_check = True
 
-encl_dict, it = compute_enclosure(build_model, parameter, options)
+# encl_dict, it = compute_enclosure(build_model, parameter, options)
+
+# N, A, lubs, box_list = MOMIBB_direct(
+#     build_model,
+#     parameter,
+#     options#,
+#     # encl_dict['zu'],
+#     # encl_dict['zl']
+#     )

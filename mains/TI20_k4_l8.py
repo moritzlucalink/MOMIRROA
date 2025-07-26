@@ -49,24 +49,21 @@ def build_model(m):
     model.x10 = Var(within=Integers, bounds=(-3,3))
     model.x11 = Var(within=Integers, bounds=(-3,3))
     model.x12 = Var(within=Integers, bounds=(-3,3))
-    model.x13 = Var(within=Integers, bounds=(-3,3))
-    model.x14 = Var(within=Integers, bounds=(-3,3))
+    # model.x13 = Var(within=Integers, bounds=(-3,3))
+    # model.x14 = Var(within=Integers, bounds=(-3,3))
 
     # define constraints
     model.cons0 = Constraint(expr = -model.x1**2 - model.x2**2 - model.x3**2\
 				  - model.x4**2 + 1 <= 0)
     model.cons1 = Constraint(expr = model.x5**2 + model.x6**2 + model.x7**2\
                                   + model.x8**2 + model.x9**2 + model.x10**2\
-                                  + model.x11**2 + model.x12**2 + model.x13**2\
-                                  + model.x14**2 - 9 <= 0)
+                                  + model.x11**2 + model.x12**2 - 9 <= 0)
 
     # define objectives
     model.objective0 = Objective(expr = model.x1 + model.x2 + model.x5 \
-				      + model.x6 + model.x7 + model.x8 \
-                                      + model.x9)
-    model.objective1 = Objective(expr = model.x3 + model.x4 + model.x10 \
-                                      + model.x11 + model.x12 + model.x13 \
-                                      + model.x14)
+				      + model.x6 + model.x7 + model.x8)
+    model.objective1 = Objective(expr = model.x3 + model.x4 + model.x9 \
+                                      + model.x10 + model.x11 + model.x12)
 
     for o in model.component_objects(Objective):
         if not 'objective'+str(m) in o.name:

@@ -11,9 +11,11 @@ from pyomo.core.expr.current import identify_variables, identify_components
 
 import sys
 
-sys.path.append('../methods')
+sys.path.append('../MOMIRROA_methods')
+sys.path.append('../MOMIBB_methods')
 
-from compute_enclosure import *
+from MOMIRROA import *
+from MOMIBB_direct import *
 
 """
 problem instance (TI22) from
@@ -55,37 +57,41 @@ def build_model(m):
 
     return model
 
+
 # set up the parameters
 parameter = structure()
 parameter.m = 3
 parameter.tol = 0.1
-parameter.maxiter = 1000
+parameter.maxiter = 3000
 parameter.timeout = 3600
 parameter.factor_delta = 0.95 * parameter.tol
 
 # set up options
 options = structure()
 
-# determine if relaxations should be used
-options.solve_direct = False
-# determine the gap if no relaxations are used
-options.gap_tolerance = 5e-2
+options.solve_direct = False # determine if relaxations should be used
 
-# determine if plots should be shown
-options.show_plots = True
+options.gap_tolerance = 1e-4 # determine the gap if no relaxations are used
 
-# determine if NLP should be solved only to feasibility
-options.nlp_feasibility_only = False
+options.show_plots = True # determine if plots should be shown
 
-# determine constraint violation tolerance
-options.constraint_tolerance = 1e-4
+options.nlp_feasibility_only = True # determine if NLP should be solved only to feasibility
 
-# determine if adaptive refinement procedure should be applied
-options.adaptive_refinement = True
-# determine if (and when) OBBT should be applied
-options.bound_tightening = 3
+options.constraint_tolerance = 1e-6 # determine constraint violation tolerance
 
-# determine if new utopian should be required to be not included in current utopians
-options.soft_utopian_check = True
+options.adaptive_refinement = False # determine if adaptive refinement procedure should be applied
 
-encl_dict, it = compute_enclosure(build_model, parameter, options)
+options.bound_tightening = 1e20 # determine if (and when) OBBT should be applied
+
+options.soft_utopian_check = True # determine if new utopian should be required to be not included in current utopians
+
+options.method = 'Nothing' # determine which method should be applied
+
+
+if options.method == 'MOMIRROA':
+    print('MOMIRROA is chosen for computing an enclosure')
+    encl_dict, it = MOMIRROA(build_model, parameter, options)
+
+elif options.method == 'MOMIBB':
+    print('MOMIBB direct is chosen for computing an enclosure')
+    encl_dict, it = MOMIBB_direct(build_model, parameter, options)
