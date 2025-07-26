@@ -1,0 +1,62 @@
+summary of analysis
+total time: 5397.63739490509
+iterations: 4
+width: 3.0tol: 0.1
+# of nondominated points:7
+
+maximal # of preimage set boxes: 65792
+AVG # of preimage set boxes: 4236.40625
+# of MILPs: 32
+AVG time for MILPs: 28.38626691699028
+# of NLPs: 26
+AVG time for NLPs: 0.03500000000000001
+time spent for bound tightening: 0
+# of OBBT MILPs: 0
+share of search zone improvement by feas-dec (total): 0.4444444444444444
+
+iteration information:
+# of PSB per iteration:
+Max # PSB in iteration0: 129
+Max # PSB in iteration1: 129
+Max # PSB in iteration2: 129
+Max # PSB in iteration3: 65792
+
+AVG # PSB per iteration:
+AVG # PSB in iteration0: 32.875
+AVG # PSB in iteration1: 129.0
+AVG # PSB in iteration2: 129.0
+AVG # PSB in iteration3: 6739.3
+
+# of MILPs per iteration:
+# of MILPs in iteration0: 8
+# of MILPs in iteration1: 2
+# of MILPs in iteration2: 2
+# of MILPs in iteration3: 20
+
+AVG time for MILPs per iteration:
+AVG time for MILPs in iteration0: 0.06103920936584473
+AVG time for MILPs in iteration1: 0.0661313533782959
+AVG time for MILPs in iteration2: 0.0627450942993164
+AVG time for MILPs in iteration3: 45.38072373867035
+
+# of NLPs per iteration:
+# of NLPs in iteration0: 7
+# of NLPs in iteration1: 0
+# of NLPs in iteration2: 1
+# of NLPs in iteration3: 18
+
+AVG time for NLPs per iteration:
+AVG time for NLPs in iteration0: 0.0
+AVG time for NLPs in iteration2: 0.1
+AVG time for NLPs in iteration3: 0.04500000000000001
+
+
+share of search zone improvement by feas-dec in0-th iteration:1.0
+share of search zone improvement by feas-dec in1-th iteration:0.5
+share of search zone improvement by feas-dec in2-th iteration:0.5
+share of search zone improvement by feas-dec in3-th iteration:0.25
+share of enforced search zone improvement (total):0.0
+share of enforced search zone improvement in0-th iteration:0.0
+share of enforced search zone improvement in1-th iteration:0.0
+share of enforced search zone improvement in2-th iteration:0.0
+share of enforced search zone improvement in3-th iteration:0.0

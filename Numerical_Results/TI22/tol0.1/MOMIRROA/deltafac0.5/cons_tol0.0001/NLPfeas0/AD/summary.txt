@@ -1,0 +1,223 @@
+summary of analysis
+total time: 316.67911982536316
+iterations: 24
+width: 0.09999999999999998tol: 0.1
+# of nondominated points:226
+
+maximal # of preimage set boxes: 57
+AVG # of preimage set boxes: 39.920184190330005
+# of MILPs: 1303
+AVG time for MILPs: 0.04891989236598919
+# of NLPs: 777
+AVG time for NLPs: 0.004710424710424711
+time spent for bound tightening: 0
+# of OBBT MILPs: 0
+share of search zone improvement by feas-dec (total): 0.0
+
+iteration information:
+# of PSB per iteration:
+Max # PSB in iteration0: 4
+Max # PSB in iteration1: 4
+Max # PSB in iteration2: 32
+Max # PSB in iteration3: 25
+Max # PSB in iteration4: 39
+Max # PSB in iteration5: 48
+Max # PSB in iteration6: 41
+Max # PSB in iteration7: 46
+Max # PSB in iteration8: 52
+Max # PSB in iteration9: 49
+Max # PSB in iteration10: 51
+Max # PSB in iteration11: 53
+Max # PSB in iteration12: 55
+Max # PSB in iteration13: 55
+Max # PSB in iteration14: 57
+Max # PSB in iteration15: 57
+Max # PSB in iteration16: 55
+Max # PSB in iteration17: 52
+Max # PSB in iteration18: 51
+Max # PSB in iteration19: 55
+Max # PSB in iteration20: 56
+Max # PSB in iteration21: 53
+Max # PSB in iteration22: 54
+Max # PSB in iteration23: 53
+
+AVG # PSB per iteration:
+AVG # PSB in iteration0: 4.0
+AVG # PSB in iteration1: 4.0
+AVG # PSB in iteration2: 15.102564102564102
+AVG # PSB in iteration3: 15.407407407407407
+AVG # PSB in iteration4: 19.612244897959183
+AVG # PSB in iteration5: 32.01754385964912
+AVG # PSB in iteration6: 32.333333333333336
+AVG # PSB in iteration7: 34.86206896551724
+AVG # PSB in iteration8: 38.19736842105263
+AVG # PSB in iteration9: 37.07843137254902
+AVG # PSB in iteration10: 37.9344262295082
+AVG # PSB in iteration11: 38.816326530612244
+AVG # PSB in iteration12: 40.78947368421053
+AVG # PSB in iteration13: 44.15068493150685
+AVG # PSB in iteration14: 45.696969696969695
+AVG # PSB in iteration15: 46.32222222222222
+AVG # PSB in iteration16: 45.93055555555556
+AVG # PSB in iteration17: 45.276923076923076
+AVG # PSB in iteration18: 44.57142857142857
+AVG # PSB in iteration19: 45.14772727272727
+AVG # PSB in iteration20: 47.26865671641791
+AVG # PSB in iteration21: 47.921052631578945
+AVG # PSB in iteration22: 49.470588235294116
+AVG # PSB in iteration23: 50.2
+
+# of MILPs per iteration:
+# of MILPs in iteration0: 1
+# of MILPs in iteration1: 2
+# of MILPs in iteration2: 39
+# of MILPs in iteration3: 27
+# of MILPs in iteration4: 49
+# of MILPs in iteration5: 57
+# of MILPs in iteration6: 27
+# of MILPs in iteration7: 29
+# of MILPs in iteration8: 76
+# of MILPs in iteration9: 51
+# of MILPs in iteration10: 61
+# of MILPs in iteration11: 98
+# of MILPs in iteration12: 114
+# of MILPs in iteration13: 73
+# of MILPs in iteration14: 66
+# of MILPs in iteration15: 90
+# of MILPs in iteration16: 72
+# of MILPs in iteration17: 65
+# of MILPs in iteration18: 91
+# of MILPs in iteration19: 88
+# of MILPs in iteration20: 67
+# of MILPs in iteration21: 38
+# of MILPs in iteration22: 17
+# of MILPs in iteration23: 5
+
+AVG time for MILPs per iteration:
+AVG time for MILPs in iteration0: 0.04204249382019043
+AVG time for MILPs in iteration1: 0.043550729751586914
+AVG time for MILPs in iteration2: 0.04027285942664513
+AVG time for MILPs in iteration3: 0.041535766036422166
+AVG time for MILPs in iteration4: 0.042377622760072044
+AVG time for MILPs in iteration5: 0.044101715087890625
+AVG time for MILPs in iteration6: 0.04623681527596933
+AVG time for MILPs in iteration7: 0.042739720180116854
+AVG time for MILPs in iteration8: 0.04391336127331382
+AVG time for MILPs in iteration9: 0.04897190542782054
+AVG time for MILPs in iteration10: 0.045147880178983094
+AVG time for MILPs in iteration11: 0.04858627854561319
+AVG time for MILPs in iteration12: 0.05032595207816676
+AVG time for MILPs in iteration13: 0.051322897819623556
+AVG time for MILPs in iteration14: 0.04941476475108753
+AVG time for MILPs in iteration15: 0.05029073026445177
+AVG time for MILPs in iteration16: 0.05088131626447042
+AVG time for MILPs in iteration17: 0.04789664928729718
+AVG time for MILPs in iteration18: 0.04782982710953597
+AVG time for MILPs in iteration19: 0.04925119605931369
+AVG time for MILPs in iteration20: 0.061847583571476725
+AVG time for MILPs in iteration21: 0.06234775718889738
+AVG time for MILPs in iteration22: 0.05866565423853257
+AVG time for MILPs in iteration23: 0.04956340789794922
+
+# of NLPs per iteration:
+# of NLPs in iteration0: 1
+# of NLPs in iteration1: 2
+# of NLPs in iteration2: 17
+# of NLPs in iteration3: 25
+# of NLPs in iteration4: 13
+# of NLPs in iteration5: 34
+# of NLPs in iteration6: 15
+# of NLPs in iteration7: 19
+# of NLPs in iteration8: 49
+# of NLPs in iteration9: 26
+# of NLPs in iteration10: 46
+# of NLPs in iteration11: 72
+# of NLPs in iteration12: 60
+# of NLPs in iteration13: 33
+# of NLPs in iteration14: 50
+# of NLPs in iteration15: 46
+# of NLPs in iteration16: 43
+# of NLPs in iteration17: 44
+# of NLPs in iteration18: 53
+# of NLPs in iteration19: 53
+# of NLPs in iteration20: 44
+# of NLPs in iteration21: 21
+# of NLPs in iteration22: 9
+# of NLPs in iteration23: 2
+
+AVG time for NLPs per iteration:
+AVG time for NLPs in iteration0: 0.02
+AVG time for NLPs in iteration1: 0.04
+AVG time for NLPs in iteration2: 0.0029411764705882353
+AVG time for NLPs in iteration3: 0.0036
+AVG time for NLPs in iteration4: 0.01076923076923077
+AVG time for NLPs in iteration5: 0.003235294117647059
+AVG time for NLPs in iteration6: 0.010666666666666666
+AVG time for NLPs in iteration7: 0.009473684210526316
+AVG time for NLPs in iteration8: 0.00326530612244898
+AVG time for NLPs in iteration9: 0.007307692307692308
+AVG time for NLPs in iteration10: 0.009565217391304351
+AVG time for NLPs in iteration11: 0.004583333333333334
+AVG time for NLPs in iteration12: 0.004166666666666667
+AVG time for NLPs in iteration13: 0.005151515151515153
+AVG time for NLPs in iteration14: 0.004400000000000001
+AVG time for NLPs in iteration15: 0.003695652173913044
+AVG time for NLPs in iteration16: 0.003953488372093024
+AVG time for NLPs in iteration17: 0.0036363636363636364
+AVG time for NLPs in iteration18: 0.002452830188679245
+AVG time for NLPs in iteration19: 0.002641509433962264
+AVG time for NLPs in iteration20: 0.0036363636363636364
+AVG time for NLPs in iteration21: 0.005714285714285715
+AVG time for NLPs in iteration22: 0.0022222222222222222
+AVG time for NLPs in iteration23: 0.0
+
+
+share of search zone improvement by feas-dec in0-th iteration:0.0
+share of search zone improvement by feas-dec in1-th iteration:0.0
+share of search zone improvement by feas-dec in2-th iteration:0.0
+share of search zone improvement by feas-dec in3-th iteration:0.0
+share of search zone improvement by feas-dec in4-th iteration:0.0
+share of search zone improvement by feas-dec in5-th iteration:0.0
+share of search zone improvement by feas-dec in6-th iteration:0.0
+share of search zone improvement by feas-dec in7-th iteration:0.0
+share of search zone improvement by feas-dec in8-th iteration:0.0
+share of search zone improvement by feas-dec in9-th iteration:0.0
+share of search zone improvement by feas-dec in10-th iteration:0.0
+share of search zone improvement by feas-dec in11-th iteration:0.0
+share of search zone improvement by feas-dec in12-th iteration:0.0
+share of search zone improvement by feas-dec in13-th iteration:0.0
+share of search zone improvement by feas-dec in14-th iteration:0.0
+share of search zone improvement by feas-dec in15-th iteration:0.0
+share of search zone improvement by feas-dec in16-th iteration:0.0
+share of search zone improvement by feas-dec in17-th iteration:0.0
+share of search zone improvement by feas-dec in18-th iteration:0.0
+share of search zone improvement by feas-dec in19-th iteration:0.0
+share of search zone improvement by feas-dec in20-th iteration:0.0
+share of search zone improvement by feas-dec in21-th iteration:0.0
+share of search zone improvement by feas-dec in22-th iteration:0.0
+share of search zone improvement by feas-dec in23-th iteration:0.0
+share of enforced search zone improvement (total):0.0
+share of enforced search zone improvement in0-th iteration:0.0
+share of enforced search zone improvement in1-th iteration:0.0
+share of enforced search zone improvement in2-th iteration:0.0
+share of enforced search zone improvement in3-th iteration:0.0
+share of enforced search zone improvement in4-th iteration:0.0
+share of enforced search zone improvement in5-th iteration:0.0
+share of enforced search zone improvement in6-th iteration:0.0
+share of enforced search zone improvement in7-th iteration:0.0
+share of enforced search zone improvement in8-th iteration:0.0
+share of enforced search zone improvement in9-th iteration:0.0
+share of enforced search zone improvement in10-th iteration:0.0
+share of enforced search zone improvement in11-th iteration:0.0
+share of enforced search zone improvement in12-th iteration:0.0
+share of enforced search zone improvement in13-th iteration:0.0
+share of enforced search zone improvement in14-th iteration:0.0
+share of enforced search zone improvement in15-th iteration:0.0
+share of enforced search zone improvement in16-th iteration:0.0
+share of enforced search zone improvement in17-th iteration:0.0
+share of enforced search zone improvement in18-th iteration:0.0
+share of enforced search zone improvement in19-th iteration:0.0
+share of enforced search zone improvement in20-th iteration:0.0
+share of enforced search zone improvement in21-th iteration:0.0
+share of enforced search zone improvement in22-th iteration:0.0
+share of enforced search zone improvement in23-th iteration:0.0

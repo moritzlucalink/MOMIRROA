@@ -1,0 +1,62 @@
+summary of analysis
+total time: 6495.46712064743
+iterations: 4
+width: 3.0tol: 0.05
+# of nondominated points:7
+
+maximal # of preimage set boxes: 65792
+AVG # of preimage set boxes: 4252.40625
+# of MILPs: 32
+AVG time for MILPs: 27.226585030555725
+# of NLPs: 25
+AVG time for NLPs: 0.09319999999999999
+time spent for bound tightening: 0
+# of OBBT MILPs: 0
+share of search zone improvement by feas-dec (total): 0.4444444444444444
+
+iteration information:
+# of PSB per iteration:
+Max # PSB in iteration0: 129
+Max # PSB in iteration1: 129
+Max # PSB in iteration2: 129
+Max # PSB in iteration3: 65792
+
+AVG # PSB per iteration:
+AVG # PSB in iteration0: 32.875
+AVG # PSB in iteration1: 129.0
+AVG # PSB in iteration2: 129.0
+AVG # PSB in iteration3: 6764.9
+
+# of MILPs per iteration:
+# of MILPs in iteration0: 8
+# of MILPs in iteration1: 2
+# of MILPs in iteration2: 2
+# of MILPs in iteration3: 20
+
+AVG time for MILPs per iteration:
+AVG time for MILPs in iteration0: 0.05388748645782471
+AVG time for MILPs in iteration1: 0.06563949584960938
+AVG time for MILPs in iteration2: 0.06248629093170166
+AVG time for MILPs in iteration3: 43.5281684756279
+
+# of NLPs per iteration:
+# of NLPs in iteration0: 7
+# of NLPs in iteration1: 0
+# of NLPs in iteration2: 1
+# of NLPs in iteration3: 17
+
+AVG time for NLPs per iteration:
+AVG time for NLPs in iteration0: 0.0
+AVG time for NLPs in iteration2: 0.09
+AVG time for NLPs in iteration3: 0.13176470588235292
+
+
+share of search zone improvement by feas-dec in0-th iteration:1.0
+share of search zone improvement by feas-dec in1-th iteration:0.5
+share of search zone improvement by feas-dec in2-th iteration:0.5
+share of search zone improvement by feas-dec in3-th iteration:0.25
+share of enforced search zone improvement (total):0.0
+share of enforced search zone improvement in0-th iteration:0.0
+share of enforced search zone improvement in1-th iteration:0.0
+share of enforced search zone improvement in2-th iteration:0.0
+share of enforced search zone improvement in3-th iteration:0.0

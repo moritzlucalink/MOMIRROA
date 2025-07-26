@@ -1,0 +1,7 @@
+summary of analysis
+total time: 3600.152323961258
+iterations: 11077
+width: 0.3591228825963544 tol: 0.01
+# of MINLPs:69766
+# of nondominated points:46
+# of active boxes:3018

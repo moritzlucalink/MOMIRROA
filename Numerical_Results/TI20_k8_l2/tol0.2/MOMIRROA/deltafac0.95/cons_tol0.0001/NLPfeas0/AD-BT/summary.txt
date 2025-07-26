@@ -1,0 +1,78 @@
+summary of analysis
+total time: 20.787689685821533
+iterations: 6
+width: 0.19tol: 0.2
+# of nondominated points:10
+
+maximal # of preimage set boxes: 29
+AVG # of preimage set boxes: 8.212765957446809
+# of MILPs: 94
+AVG time for MILPs: 0.04612566816045883
+# of NLPs: 71
+AVG time for NLPs: 0.01859154929577465
+time spent for bound tightening: 5.377612829208374
+# of OBBT MILPs: 120
+share of search zone improvement by feas-dec (total): 0.21052631578947367
+
+iteration information:
+# of PSB per iteration:
+Max # PSB in iteration0: 6
+Max # PSB in iteration1: 6
+Max # PSB in iteration2: 6
+Max # PSB in iteration3: 29
+Max # PSB in iteration4: 6
+Max # PSB in iteration5: 12
+
+AVG # PSB per iteration:
+AVG # PSB in iteration0: 4.0
+AVG # PSB in iteration1: 6.0
+AVG # PSB in iteration2: 6.0
+AVG # PSB in iteration3: 13.027027027027026
+AVG # PSB in iteration4: 4.387096774193548
+AVG # PSB in iteration5: 6.5
+
+# of MILPs per iteration:
+# of MILPs in iteration0: 5
+# of MILPs in iteration1: 2
+# of MILPs in iteration2: 3
+# of MILPs in iteration3: 37
+# of MILPs in iteration4: 31
+# of MILPs in iteration5: 16
+
+AVG time for MILPs per iteration:
+AVG time for MILPs in iteration0: 0.04466924667358398
+AVG time for MILPs in iteration1: 0.04556560516357422
+AVG time for MILPs in iteration2: 0.04435229301452637
+AVG time for MILPs in iteration3: 0.04783540158658414
+AVG time for MILPs in iteration4: 0.044684225513089086
+AVG time for MILPs in iteration5: 0.045822352170944214
+
+# of NLPs per iteration:
+# of NLPs in iteration0: 4
+# of NLPs in iteration1: 0
+# of NLPs in iteration2: 2
+# of NLPs in iteration3: 33
+# of NLPs in iteration4: 23
+# of NLPs in iteration5: 9
+
+AVG time for NLPs per iteration:
+AVG time for NLPs in iteration0: 0.0
+AVG time for NLPs in iteration2: 0.1
+AVG time for NLPs in iteration3: 0.019393939393939397
+AVG time for NLPs in iteration4: 0.015652173913043483
+AVG time for NLPs in iteration5: 0.013333333333333332
+
+
+share of search zone improvement by feas-dec in0-th iteration:1.0
+share of search zone improvement by feas-dec in1-th iteration:1.0
+share of search zone improvement by feas-dec in2-th iteration:0.3333333333333333
+share of search zone improvement by feas-dec in3-th iteration:0.0
+share of search zone improvement by feas-dec in4-th iteration:0.0
+share of search zone improvement by feas-dec in5-th iteration:0.0
+share of enforced search zone improvement (total):0.0
+share of enforced search zone improvement in0-th iteration:0.0
+share of enforced search zone improvement in1-th iteration:0.0
+share of enforced search zone improvement in2-th iteration:0.0
+share of enforced search zone improvement in3-th iteration:0.0
+share of enforced search zone improvement in4-th iteration:0.0
+share of enforced search zone improvement in5-th iteration:0.0

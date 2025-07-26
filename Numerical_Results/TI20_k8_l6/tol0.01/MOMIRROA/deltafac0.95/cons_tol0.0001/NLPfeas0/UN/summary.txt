@@ -1,0 +1,62 @@
+summary of analysis
+total time: 7333.004913568497
+iterations: 4
+width: 4.0tol: 0.01
+# of nondominated points:7
+
+maximal # of preimage set boxes: 69632
+AVG # of preimage set boxes: 6421.243243243243
+# of MILPs: 37
+AVG time for MILPs: 26.115723384393227
+# of NLPs: 31
+AVG time for NLPs: 0.08096774193548387
+time spent for bound tightening: 0
+# of OBBT MILPs: 0
+share of search zone improvement by feas-dec (total): 0.4444444444444444
+
+iteration information:
+# of PSB per iteration:
+Max # PSB in iteration0: 4097
+Max # PSB in iteration1: 4097
+Max # PSB in iteration2: 4097
+Max # PSB in iteration3: 69632
+
+AVG # PSB per iteration:
+AVG # PSB in iteration0: 631.0769230769231
+AVG # PSB in iteration1: 4097.0
+AVG # PSB in iteration2: 4097.0
+AVG # PSB in iteration3: 11377.777777777777
+
+# of MILPs per iteration:
+# of MILPs in iteration0: 13
+# of MILPs in iteration1: 2
+# of MILPs in iteration2: 4
+# of MILPs in iteration3: 18
+
+AVG time for MILPs per iteration:
+AVG time for MILPs in iteration0: 0.38683082507206845
+AVG time for MILPs in iteration1: 1.7914443016052246
+AVG time for MILPs in iteration2: 1.4140668511390686
+AVG time for MILPs in iteration3: 52.889656027158104
+
+# of NLPs per iteration:
+# of NLPs in iteration0: 12
+# of NLPs in iteration1: 0
+# of NLPs in iteration2: 2
+# of NLPs in iteration3: 17
+
+AVG time for NLPs per iteration:
+AVG time for NLPs in iteration0: 0.0
+AVG time for NLPs in iteration2: 0.06
+AVG time for NLPs in iteration3: 0.14058823529411762
+
+
+share of search zone improvement by feas-dec in0-th iteration:1.0
+share of search zone improvement by feas-dec in1-th iteration:1.0
+share of search zone improvement by feas-dec in2-th iteration:0.25
+share of search zone improvement by feas-dec in3-th iteration:0.0
+share of enforced search zone improvement (total):0.0
+share of enforced search zone improvement in0-th iteration:0.0
+share of enforced search zone improvement in1-th iteration:0.0
+share of enforced search zone improvement in2-th iteration:0.0
+share of enforced search zone improvement in3-th iteration:0.0
