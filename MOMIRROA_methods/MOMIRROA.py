@@ -322,12 +322,6 @@ def MOMIRROA(call_model, parameter, options):
             print('# of OBBT MILPs:', sum(encl_dict['analysis'][str(i)]['# of OBBT MILPs'] for i in np.arange(0,it)))
             print('share of search zone improvement by feas-dec (total):',
                   sum(encl_dict['analysis'][str(i)]['# of considered feasible'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['# of search zones'] for i in np.arange(0,it)))
-            # for i in np.arange(0,it):
-            #     print('share of search zone improvement by feas-dec in', i,'-th iteration:', encl_dict['analysis'][str(i)]['# of considered feasible']/encl_dict['analysis'][str(i)]['# of search zones'])
-            # print('share of enforced search zone improvement (total):',
-            #       sum(encl_dict['analysis'][str(i)]['# of enforced feasibility check'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['# of search zones'] for i in np.arange(0,it)))
-            # for i in np.arange(0,it):
-            #     print('share of enforced search zone improvement in', i,'-th iteration:', encl_dict['analysis'][str(i)]['# of enforced feasibility check']/encl_dict['analysis'][str(i)]['# of search zones'])
 
             plot_nondom(encl_dict['N'], m, total_time, it, tol, width)
             plot_enclosure(encl_dict, m, total_time, it, tol, width)

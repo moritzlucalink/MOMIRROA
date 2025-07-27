@@ -14,6 +14,24 @@ from update_llbs import *
 
 
 def rebuild_utopian_llbs(encl_dict, y):
+    """
+    routine for rebuilding the set of utopian points and corresponding set
+    of local lower bounds w.r.t. a considered-as-feasible point which dominates
+    at least one of the utopian points
+
+    Parameters
+    ----------
+    encl_dict : dict
+        containing all information collected by the algorithm.
+    y : array
+        representing the considered-as-feasible point.
+
+    Returns
+    -------
+    new : dict
+        containing all updated information collected by the algorithm.
+
+    """
     
     # deepcopy old state
     old = cp.deepcopy(encl_dict)

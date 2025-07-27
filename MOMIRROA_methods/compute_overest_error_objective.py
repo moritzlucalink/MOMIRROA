@@ -77,11 +77,11 @@ def compute_overest_error_objective(call_model, obj, var_list, info, time_limit)
     try:
         overest_error = -results.problem.lower_bound
     except:
+        small_model.pprint()
         raise TimeoutError(f'Solver did not finish within {time_limit}s for\
                            finding a bound on the objective function\
-                               approximation error')
+                               approximation error', time_limit)
     
-    # overest_error = -small_model.objective()
     overest_error = rounding_upper(overest_error,5)
     
     return overest_error

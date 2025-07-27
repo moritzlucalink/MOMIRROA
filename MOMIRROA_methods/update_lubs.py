@@ -10,6 +10,39 @@ import copy as cp
 import numpy as np
 
 def update_lubs(lubs, defpois, z):
+    """
+    routine for updating set of local upper bounds with corresponding defining
+    points w.r.t. a new point z
+    
+    for reference see Algorithm 5 in
+    
+    Klamroth, K. and Lacour, R. and Vanderpooten, D.
+    On the representation of the search region in multi-objective optimization.
+    Eur. J. Oper. Res. 245(3). 2015.
+
+    Parameters
+    ----------
+    lubs : list
+        representing the current assignment of local upper bounds.
+    defpois : dict
+        with lubs as keys in first layer and indices as keys in second layer
+        and list of defining points as values in third layer.
+    z : array
+        representing the update point.
+
+    Raises
+    ------
+    ValueError
+        if shapes of new update point and old local upper bounds do not align.
+
+    Returns
+    -------
+    new_lubs : list
+        representing the updated assignment of local upper bounds.
+    new_defpois : dict
+        representing the updated assignment of defining points.
+
+    """
     
     z = np.asarray(z)
     n = z.size

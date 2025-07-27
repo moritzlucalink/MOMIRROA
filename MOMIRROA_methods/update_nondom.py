@@ -10,7 +10,39 @@ import numpy as np
 
 
 def update_nondom(N, y):
+    """
+    update the stable set of potentially nondominated points w.r.t. a new
+    potentially nondominated point
     
+    for reference see Algorithm 3 in
+    
+    Link, M. and Volkwein, S.
+    Adaptive piecewise linear relaxations for enclosure computations for
+    nonconvex multi-objective mixed-integer quadratically constrained programs
+    J. Global Optim. 87. 2023.
+
+    Parameters
+    ----------
+    N : list
+        consisting of a stable set of potentially nondominated points.
+    y : array
+        the new potentially nondominated point.
+
+    Raises
+    ------
+    ValueError
+        if shapes of new potentially nondominated point and old potentially
+        nondominated points do not align.
+
+    Returns
+    -------
+    new_N : list
+        updated list of potentially nondominated points.
+    check : boolean
+        indicating if y belongs to updted list of potentially nondominated
+        points, i.e., if y improved N.
+
+    """
     
     y = np.asarray(y)
     

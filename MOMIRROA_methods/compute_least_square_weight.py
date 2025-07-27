@@ -13,6 +13,29 @@ import numpy as np
 
 
 def compute_least_square_weight(cons, vars, info):
+    """
+    routine for computing the least square weight of a linear function with
+    respect to the corner points of a variable domain box and a constraint
+    function
+
+    Parameters
+    ----------
+    cons : pyomo constraint object
+        representing the constraint function for which the least square weight
+        should be computed.
+    vars : list
+        containing pyomo variable objects appearing in the constraint function
+        of interest.
+    info : dict
+        containing all information of the current box of interest.
+
+    Returns
+    -------
+    weight : dict
+        containing respective weights for all appearing variables as well as
+        the constant term.
+
+    """
     
     n = len(vars)
     

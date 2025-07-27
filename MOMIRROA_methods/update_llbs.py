@@ -11,6 +11,39 @@ import numpy as np
 
 
 def update_llbs(llbs, defpois, z):
+    """
+    routine for updating the set of local lower bounds with corresponding
+    defining points w.r.t. a new point z
+    
+    Adapted version for local lower bounds of Algorithm 5 in 
+    
+    Klamroth, K. and Lacour, R. and Vanderpooten, D.
+    On the representation of the search region in multi-objective optimization.
+    Eur. J. Oper. Res. 245(3). 2015.
+
+    Parameters
+    ----------
+    llbs : list
+        representing the current assignment of local lower bounds.
+    defpois : dict
+        with llbs as keys in first layer and indices as keys in second layer
+        and list of defining points as values in third layer.
+    z : array
+        representing the update point.
+
+    Raises
+    ------
+    ValueError
+        if shapes of new update point and old local lower bounds do not align.
+
+    Returns
+    -------
+    new_llbs : list
+        representing the updated assignment of local lower bounds.
+    new_defpois : dict
+        representing the updated assignment of defining points.
+
+    """
     
     z = np.asarray(z)
     n = z.size

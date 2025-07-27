@@ -10,6 +10,29 @@ import copy as cp
 import numpy as np
 
 def update_lub_rel_info(encl_dict, info, u, old_lubs):
+    """
+    routine for assigning preimage space relaxation information to the incoming
+    local upper bounds
+
+    Parameters
+    ----------
+    encl_dict : dict
+        containing all information collected by the algorithm.
+    info : dict
+        containing all informatio for setting up the current piecewise linear
+        relaxation of the problem of interest.
+    u : array
+        representing the update point.
+    old_lubs : list
+        representing the list of old local upper bounds.
+
+    Returns
+    -------
+    new_info : dict
+        having the currently active lubs as keys and the corresponding
+        relaxation information dicts as values.
+
+    """
     
     # backup the old info map
     old_info = cp.deepcopy(encl_dict.get('lub_relaxation_information', {}))

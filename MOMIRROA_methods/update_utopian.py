@@ -9,6 +9,39 @@ Created on Wed Apr 30 21:30:01 2025
 import numpy as np
 
 def update_utopian(U, y, options):
+    """
+    update the stable set of utopian points w.r.t. a new utopian point
+    
+    for references see Algorithm 4 in 
+    
+    Link, M. and Volkwein, S. 
+    Adaptive piecewise linear relaxations for enclosure computations for
+    nonconvex multi-objective mixed-integer quadratically constrained programs
+    J. Global Optim. 87. 2023.
+
+    Parameters
+    ----------
+    U : list
+        consisting of a stable set of utopian points.
+    y : array
+        the new utpoian point.
+    options : structure
+        consisting of possible options for procedure.
+
+    Raises
+    ------
+    ValueError
+        if shapes of new utopian point and old ones do not align.
+
+    Returns
+    -------
+    new_U : list
+        updated list of utopian points.
+    check : boolean
+        indicating if y belongs to updated list of utopian points, i.e., if y
+        improved U.
+
+    """
     
     y = np.asarray(y)
     n = y.size

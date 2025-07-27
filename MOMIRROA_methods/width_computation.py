@@ -10,7 +10,6 @@ import copy as cp
 import numpy as np
 import sys
 
-
 def compute_width(llbs, lubs, dir_vec):
     """
     vectorized computation of the relative width of the enclosure determined by

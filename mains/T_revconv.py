@@ -67,7 +67,7 @@ options.nlp_feasibility_only = False # determine if NLP should be solved only to
 
 options.constraint_tolerance = 1e-6 # determine constraint violation tolerance
 
-options.adaptive_refinement = False # determine if adaptive refinement procedure should be applied
+options.adaptive_refinement = True # determine if adaptive refinement procedure should be applied
 
 options.bound_tightening = 1e20 # determine if (and when) OBBT should be applied
 

@@ -87,9 +87,5 @@ def plot_enclosure(encl_dict, m, time, it, tol, width):
         ax.set_zlabel(r'$f_3$')
         ax.view_init(elev=15, azim=-130)
 
-    # plt.title('enclosure, tol: ' + str(tol) +
-    #           ',' +'\n width: ' + str(round(width,3)) + ', time(s): '+
-    #           str(round(time,1)) + ', iterations: ' + str(it))    
-
     plt.tight_layout()
     plt.show()

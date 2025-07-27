@@ -28,7 +28,7 @@ def restricted_reduced_weighted_sum(call_model, m, alpha, solution, u, options, 
     alpha : ndarray
         contains the specific weight for each of the objective functions.
     solution : dict
-        having the variable names as keys and the corresponding optimal values 
+        having the variable names as keys and the corresponding optimal values
         of the relaxed problem as values.
     u : ndarray
         representing the image space vector determining the search zone.
@@ -45,39 +45,39 @@ def restricted_reduced_weighted_sum(call_model, m, alpha, solution, u, options, 
         representing the solution time of the problem.
 
     """
-    
+
     # catch nlp solver
     try:
         solver = options.nlp_solver
     except:
         solver = 'scip'
-            
+
     # decide if nlp should be solved to feasibility only
     try:
         feasibility_only = options.nlp_feasibility_only
     except:
         feasibility_only = False
-    
+
     # set up model
     model = call_model(0)
-    
+
     # fix integer variables
     for v in model.component_objects(Var):
         if v.is_indexed():
             for i in v.index_set():
                 if v[i].domain == Integers or v[i].domain == Binary:
                     v[i].fix(np.round(solution[v[i].name]))
-                
+
         else:
             if v.domain == Integers or v.domain == Binary:
                 v.fix(np.round(solution[v.name]))
-            
+
     # set up weighted objective function
     for i in np.arange(0,m):
         for o in model.component_objects(Objective):
             if 'objective'+str(i) in o.name:
                 o.deactivate()
-                
+
                 if i == 0:
                     model.add_component('weighted_objective',
                                         Objective(expr = o.expr * alpha[i]))
@@ -85,10 +85,10 @@ def restricted_reduced_weighted_sum(call_model, m, alpha, solution, u, options, 
                     for obj in model.component_objects(Objective):
                         if 'weighted_objective' == obj.name:
                             obj.expr += o.expr * alpha[i]
-                
+
                 model.add_component('upper_bound_for_'+str(i)+'-th_objective',
                                     Constraint(expr = o.expr - u[i] <= 0))
-    
+
     # solve the model
     opt = SolverFactory(solver)
     if feasibility_only:
@@ -96,24 +96,26 @@ def restricted_reduced_weighted_sum(call_model, m, alpha, solution, u, options, 
             opt.options['limits/solutions'] = 1
         elif solver == 'gurobi':
             opt.options['SolutionLimit'] = 1
-            
+
     if solver == 'scip':
         opt.options['limits/time'] = timelimit
     elif solver == 'gurobi':
         opt.options['TimeLimit'] = timelimit
-    
-    
+
+
     results = opt.solve(model, tee=False, options={'threads': 1})
-    
+
     # catch solution time
     sol_time = results.solver.time
-    
+
     # check for infeasibility
     if results.solver.termination_condition == TerminationCondition.infeasible:
         return None, None, sol_time
 
     if results.solver.termination_condition == TerminationCondition.maxTimeLimit:
-        raise TimeoutError('Solver did not finish within timelimit of {timelimit}s')
+        model.pprint()
+        raise TimeoutError(f'Solver did not finish within timelimit of {timelimit}s',
+        timelimit)
 
 
     # retrieve objective values
@@ -132,10 +134,6 @@ def restricted_reduced_weighted_sum(call_model, m, alpha, solution, u, options, 
             for i in v.index_set():
                 solution[v[i].name] = value(v[i])
         else:
-            solution[v.name] = value(v)    
-    
+            solution[v.name] = value(v)
+
     return objective_vector, solution, sol_time
-    
-    
-    
-    
