@@ -10,7 +10,31 @@ import numpy as np
 
 
 def update_nondom(N, y):
-    
+    """
+    routine for updating the set of potentially nondominated points
+
+    Parameters
+    ----------
+    N : list
+        containing potentially nondominated points.
+    y : array
+        representing the update point.
+
+    Raises
+    ------
+    ValueError
+        if shapes of update point and potentially nondominated points do not
+        align.
+
+    Returns
+    -------
+    new_N : list
+        updated and stable set of potentially nondominated points.
+    check : boolean
+        indicating if updae point improved set of potentially nondominated 
+        points.
+
+    """
     
     y = np.asarray(y)
     

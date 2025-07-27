@@ -19,10 +19,10 @@ from MOMIBB_direct import *
 
 
 """
-problem instance (P3) with k=2 and l=2 from 
+problem instance (P3) with k=2 and l=2 from
 Eichfelder, G., Stein, O., and Warnow, L. A Solver For Multiobjective
-Mixed-Integer Convex and Nonconvex Optimization. 2023 
- 
+Mixed-Integer Convex and Nonconvex Optimization. 2023
+
 """
 
 plt.close('all')
@@ -45,11 +45,11 @@ def build_model(m):
     # define constraints
     model.cons0 = Constraint(expr = -model.x1**2 - model.x2**2 + 1 <= 0)
     model.cons1 = Constraint(expr = model.x3**2 + model.x4**2 - 9 <= 0)
-    
+
     # define objectives
     model.objective0 = Objective(expr = model.x1 + model.x3)
     model.objective1 = Objective(expr = model.x2 + model.x4)
-    
+
     for o in model.component_objects(Objective):
         if not 'objective'+str(m) in o.name:
             o.deactivate()
@@ -58,7 +58,7 @@ def build_model(m):
 
 # set up the parameters
 parameter = structure()
-parameter.m = 3
+parameter.m = 2
 parameter.tol = 0.1
 parameter.maxiter = 5000
 parameter.timeout = 3600
@@ -83,7 +83,7 @@ options.bound_tightening = 1e20 # determine if (and when) OBBT should be applied
 
 options.soft_utopian_check = True # determine if new utopian should be required to be not included in current utopians
 
-options.method = 'Nothing' # determine which method should be applied
+options.method = 'MOMIBB' # determine which method should be applied
 
 
 if options.method == 'MOMIRROA':

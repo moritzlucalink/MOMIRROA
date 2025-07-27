@@ -9,7 +9,28 @@ Created on Mon May 19 09:53:32 2025
 import numpy as np
 
 def update_lubs(lubs, y):
+    """
+    routine for updating set of local upper bounds w.r.t. a new point y
+    
+    for reference see Algorithm 3 in 
+    
+    Klamroth, K. and Lacour, R. and Vanderpooten, D.
+    On the representation of the search region in multi-objective optimization.
+    Eur. J. Oper. Res. 245(3). 2015.
 
+    Parameters
+    ----------
+    lubs : list
+        representing the current assignment of local upper bounds.
+    y : array
+        representng the updae point.
+
+    Returns
+    -------
+    list
+        representing the updated assignment of local upper bounds.
+
+    """
     lub_arr = np.stack(lubs, axis=0)
     m = len(y)
     

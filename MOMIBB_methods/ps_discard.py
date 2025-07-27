@@ -9,7 +9,36 @@ Created on Tue Jun 10 21:03:49 2025
 from pyomo.environ import *
 
 def ps_discard(call_model, box_info, lub, timeout, solver):
+    """
+    routine for performing the Pascoletti-Serafini discarding test as described
+    in 
     
+    Eichfelder, G. and Stein, O. and Warnow, L.
+    A solver for multiobjective mixed-integer convex and nonconvex optimization.
+    J. Optimiz. Theory App. 203, 1736 - 1766. 2023.
+
+    Parameters
+    ----------
+    call_model : function
+        returning a pyomo model of the problem to be solved.
+    box_info : dict
+        having the variables as keys and a list of corresponding lower and
+        upper variable bounds as values.
+    lub : array
+        representing the local upper bound upon which the discarding test is
+        performed.
+    timeout : integer
+        representing the timelimit for the method.
+    solver : string
+        determining which solver should be used for solving the problems.
+
+    Returns
+    -------
+    bool
+        indicating if the given box can be discarded according to the performed
+        discarding test.
+
+    """
     model = call_model(0)
     
     # set variable bounds

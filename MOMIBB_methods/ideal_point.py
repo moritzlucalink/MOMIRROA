@@ -10,7 +10,29 @@ import numpy as np
 from pyomo.environ import *
 
 def compute_ideal_point(call_model, m, box_info, timeout, solver):
-    
+    """
+    routine for computing the ideal point of a given preimage-space box
+
+    Parameters
+    ----------
+    call_model : function
+        retruning a pyomo model of the problem to be solved.
+    m : integer
+        representing the number of objective functions.
+    box_info : dict
+        having the variables as keys and a list of corresponding lower and
+        upper variable bounds as values.
+    timeout : integer
+        representing the timelimit for the method.
+    solver : string
+        determining which solver should be used for solving the problems.
+
+    Returns
+    -------
+    ideal_point : array
+        representing the ideal point of the given preimage-space box.
+
+    """
     ideal_point = np.zeros(m)   # intialize ideal point
     
     for i in range(m):

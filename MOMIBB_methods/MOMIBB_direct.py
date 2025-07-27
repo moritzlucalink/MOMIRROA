@@ -20,12 +20,42 @@ from ideal_point import *
 from init_box_list import *
 from plot_enclosure import *
 from plot_nondom import *
-from update_lowerbounds import *
 from update_lubs_nodefs import *
 from update_nondom import *
 from width_computation import *
 
 def MOMIBB_direct(call_model, parameter, options, zu=[], zl=[]):
+    """
+    routine for performing the Multi-Objective Mixed-Integer Branch-and-Bound
+    (MOMIBB) method from
+    
+    Eichfelder, G. and Stein, O. and Warnow, L.
+    A solver for multiobjective mixed-integer convex and nonconvex optimization.
+    J. Optimiz. Theory App. 203, 1736 - 1766. 2023.
+
+    Parameters
+    ----------
+    call_model : function
+        returning a pyomo model of the problem to be solved.
+    parameter : structure
+        containing all parameters of the algorithm.
+    options : structure
+        containing all options of the script.
+    zu : array, optional
+        representing the upper bound of a possible image set box.
+        The default is [].
+    zl : array, optional
+        representing the lower bound of a possible image set box.
+        The default is [].
+
+    Returns
+    -------
+    encl_dict : dict
+        containing all information collected by the algorithm.
+    it : integer
+        representing the number of needed iterations.
+
+    """
     
     # catch parameters
     m = parameter.m
@@ -53,7 +83,7 @@ def MOMIBB_direct(call_model, parameter, options, zu=[], zl=[]):
             direct_solver)
     
     # initialize list of preimage space boxes with corresponding ideal points
-    box_list = [[init_box_list(call_model, parameter), zl]]
+    box_list = [[init_box_list(call_model), zl]]
     
     # initialize set of ideal points 
     A = [zl]

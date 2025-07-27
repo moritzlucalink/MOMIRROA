@@ -70,7 +70,7 @@ def build_model(m):
 
 # set up the parameters
 parameter = structure()
-parameter.m = 3
+parameter.m = 2
 parameter.tol = 0.1
 parameter.maxiter = 5000
 parameter.timeout = 3600

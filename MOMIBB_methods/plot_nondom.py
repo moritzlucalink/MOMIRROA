@@ -51,9 +51,5 @@ def plot_nondom(N, m, time, it, tol, width):
         ax.set_ylabel(r'$f_2$')
         ax.set_zlabel(r'$f_3$')
         ax.view_init(elev=15, azim=-130)
-        
-    # plt.title(r'$\epsilon$-nondominated points, tol: ' + str(tol) +
-    #           ',' +'\n width: ' + str(round(width,3)) + ', time(s): '+
-    #           str(round(time,1)) + ', iterations: ' + str(it))
     
     plt.show()
