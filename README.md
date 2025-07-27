@@ -1,3 +1,6 @@
+[![DOI](https://sandbox.zenodo.org/badge/941646841.svg)](https://handle.stage.datacite.org/10.5072/zenodo.298833)
+
+
 # Multi-objective-optimization
 This repository contains an algorithm for computing an enclosure of the nondominated set of multi-objective mixed-integer nonlinear optimization problems.
 
