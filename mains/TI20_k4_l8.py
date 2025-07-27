@@ -16,13 +16,11 @@ sys.path.append('../methods')
 from compute_enclosure import *
 
 """
-problem instance (P3) with k=4 and n=8 from
+problem instance (P3) with k=4 and l=8 from
 Eichfelder, G., Stein, O., and Warnow, L. A Solver For Multiobjective
 Mixed-Integer Convex and Nonconvex Optimization. 2023
 
 """
-
-import cProfile
 
 plt.close('all')
 
@@ -49,8 +47,6 @@ def build_model(m):
     model.x10 = Var(within=Integers, bounds=(-3,3))
     model.x11 = Var(within=Integers, bounds=(-3,3))
     model.x12 = Var(within=Integers, bounds=(-3,3))
-    # model.x13 = Var(within=Integers, bounds=(-3,3))
-    # model.x14 = Var(within=Integers, bounds=(-3,3))
 
     # define constraints
     model.cons0 = Constraint(expr = -model.x1**2 - model.x2**2 - model.x3**2\
@@ -73,26 +69,38 @@ def build_model(m):
 
 # set up the parameters
 parameter = structure()
-parameter.m = 2
+parameter.m = 3
 parameter.tol = 0.1
-parameter.maxiter = 1000
+parameter.maxiter = 5000
 parameter.timeout = 3600
 parameter.factor_delta = 0.95 * parameter.tol
 
 # set up options
 options = structure()
-options.solve_direct = True
-options.show_plots = True
-options.gap_tolerance = 1e-4
-options.nlp_feasibility_only = False
-options.constraint_tolerance = 1e-2
-options.adaptive_refinement = True
-options.bound_tightening = 3
-# options.var_count_OBBT = 0.5
 
-options.soft_utopian_check = True
-options.tight_image_box = False
-options.refine_until_feasible_search = 0
-options.enforced_BT = False
+options.solve_direct = False # determine if relaxations should be used
 
-encl_dict, it = compute_enclosure(build_model, parameter, options)
+options.gap_tolerance = 1e-4 # determine the gap if no relaxations are used
+
+options.show_plots = True # determine if plots should be shown
+
+options.nlp_feasibility_only = True # determine if NLP should be solved only to feasibility
+
+options.constraint_tolerance = 1e-6 # determine constraint violation tolerance
+
+options.adaptive_refinement = False # determine if adaptive refinement procedure should be applied
+
+options.bound_tightening = 1e20 # determine if (and when) OBBT should be applied
+
+options.soft_utopian_check = True # determine if new utopian should be required to be not included in current utopians
+
+options.method = 'Nothing' # determine which method should be applied
+
+
+if options.method == 'MOMIRROA':
+    print('MOMIRROA is chosen for computing an enclosure')
+    encl_dict, it = MOMIRROA(build_model, parameter, options)
+
+elif options.method == 'MOMIBB':
+    print('MOMIBB direct is chosen for computing an enclosure')
+    encl_dict, it = MOMIBB_direct(build_model, parameter, options)

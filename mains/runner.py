@@ -17,6 +17,11 @@ sys.path.append('../MOMIBB_methods')
 from MOMIRROA import *
 from MOMIBB_direct import *
 
+"""
+Runner script for testing multiple instances of TI20_k??_l?? with different 
+parameters.
+"""
+
 
 tols = [0.1]#, 0.1, 0.05, 0.01]
 methods = ['MOMIRROA']#, 'MOMIBB']
@@ -158,118 +163,3 @@ for k, l, tol, method in iter.product([6],
                 f.write('\nshare of enforced search zone improvement in' + str(i) + '-th iteration:' + str(encl_dict['analysis'][str(i)]['# of enforced feasibility check']/encl_dict['analysis'][str(i)]['# of search zones']))
 
             f.close()
-
-
-
-
-
-
-
-
-
-
-    # if not direct_solve:
-    #     for cons_tol, feasibility, adaptive, BT in iter.product(cons_tols,
-    #                                                           boolean,
-    #                                                           boolean,
-    #                                                           BT_vals):
-
-
-    #         options.constraint_tolerance = cons_tol
-    #         options.nlp_feasibility_only = feasibility
-    #         options.adaptive_refinement = adaptive
-    #         options.bound_tightening = BT
-
-    #         encl_dict, it = compute_enclosure(build_model, parameter, options)
-
-    #         path= '/home/moritz/Nextcloud/PhD/Dissertation/Numerics/tol'+str(tol)+\
-    #                     '/deltafac'+str(delta_factor)+'/TI20_k'+str(k)+'_l'+str(l)+'/2Stage/cons_tol'+str(cons_tol)+\
-    #                         '/NLPfeas'+str(feasibility)+'/adaptive'+str(adaptive)+'/BT'+\
-    #                     str(BT)+'/'
-
-    #         try:
-    #             os.makedirs(path)
-    #         except:
-    #             None
-
-    #         f = open(path+'summary.txt', 'w')
-    #         f.write('summary of analysis\n')
-    #         f.write('total time: ' + str(encl_dict['total_time']))
-    #         f.write('\n iterations: ' + str(it))
-    #         f.write('\n width: ' + str(encl_dict['width']) + 'tol: ' + str(tol))
-    #         f.write('\n maximal # of preimage set boxes: ' + str(max([encl_dict['analysis'][str(i)]['maxpreimageboxes'] for i in np.arange(0,it)])))
-    #         f.write('\n AVG # of preimage set boxes: ' + str(sum(encl_dict['analysis'][str(i)]['preimageboxcounter'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['relaxedproblemcounter'] for i in np.arange(0,it))))
-    #         f.write('\n # of MILPs: ' + str(sum(encl_dict['analysis'][str(i)]['relaxedproblemcounter'] for i in np.arange(0,it))))
-    #         f.write('\nAVG time for MILPs: ' + str(sum(encl_dict['analysis'][str(i)]['relaxed_solution_time'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['relaxedproblemcounter'] for i in np.arange(0,it))))
-    #         f.write('\n # of NLPs: ' + str(sum(encl_dict['analysis'][str(i)]['problemcounter'] for i in np.arange(0,it))))
-    #         f.write('\n AVG time for NLPs: ' + str(sum(encl_dict['analysis'][str(i)]['solution_time'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['problemcounter'] for i in np.arange(0,it))))
-    #         f.write('\n time spent for bound tightening: ' + str(sum(encl_dict['analysis'][str(i)]['time bound tightening'] for i in np.arange(0,it))))
-
-    #         f.write('\n # of OBBT MILPs: ' + str(sum(encl_dict['analysis'][str(i)]['# of OBBT MILPs'] for i in np.arange(0,it))))
-    #         f.write('\n share of search zone improvement by feas-dec (total): ' + str(sum(encl_dict['analysis'][str(i)]['# of considered feasible'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['# of search zones'] for i in np.arange(0,it))))
-
-    #         f.write('\n\n iteration information:')
-    #         f.write('\n # of PSB per iteration:')
-    #         for i in np.arange(0,it):
-    #             f.write('\n Max # PSB in iteration' + str(i) +': ' + str(encl_dict['analysis'][str(i)]['maxpreimageboxes']))
-
-    #         f.write('\n\n AVG # PSB per iteration:')
-    #         for i in np.arange(0,it):
-    #             f.write('\n AVG # PSB in iteration' + str(i) + ': ' +str(encl_dict['analysis'][str(i)]['preimageboxcounter']/encl_dict['analysis'][str(i)]['relaxedproblemcounter']))
-
-    #         f.write('\n\n # of MILPs per iteration:')
-    #         for i in np.arange(0,it):
-    #             f.write('\n # of MILPs in iteration' + str(i) + ': ' + str(encl_dict['analysis'][str(i)]['relaxedproblemcounter']))
-
-    #         f.write('\n\n AVG time for MILPs per iteration:')
-    #         for i in np.arange(0,it):
-    #             f.write('\n AVG time for MILPs in iteration' + str(i) + ': ' + str(encl_dict['analysis'][str(i)]['relaxed_solution_time']/encl_dict['analysis'][str(i)]['relaxedproblemcounter']))
-
-    #         f.write('\n\n # of NLPs per iteration:')
-    #         for i in np.arange(0,it):
-    #             f.write('\n # of NLPs in iteration' + str(i) + ': ' + str(encl_dict['analysis'][str(i)]['problemcounter']))
-
-    #         f.write('\n\n AVG time for NLPs per iteration:')
-    #         for i in np.arange(0,it):
-    #             try:
-    #                 f.write('\n AVG time for NLPs in iteration' + str(i) + ': ' + str(encl_dict['analysis'][str(i)]['solution_time']/encl_dict['analysis'][str(i)]['problemcounter']))
-    #             except:
-    #                 None
-
-    #         f.write('\n\n')
-    #         for i in np.arange(0,it):
-    #             f.write('\nshare of search zone improvement by feas-dec in' + str(i) + '-th iteration:' + str(encl_dict['analysis'][str(i)]['# of considered feasible']/encl_dict['analysis'][str(i)]['# of search zones']))
-    #         f.write('\n share of enforced search zone improvement (total):' + str(sum(encl_dict['analysis'][str(i)]['# of enforced feasibility check'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['# of search zones'] for i in np.arange(0,it))))
-    #         for i in np.arange(0,it):
-    #             f.write('\n share of enforced search zone improvement in' + str(i) + '-th iteration:' + str(encl_dict['analysis'][str(i)]['# of enforced feasibility check']/encl_dict['analysis'][str(i)]['# of search zones']))
-
-    #         f.close()
-
-    # else:
-    #     encl_dict, it = compute_enclosure(build_model, parameter, options)
-
-    #     path = '~/Nextcloud/PhD/Dissertation/Numerics/tol'+str(tol)+\
-    #     '/deltafac'+str(delta_factor)+'/TI20_k'+str(k)+'_l'+str(l)+'/direct/'
-
-    #     try:
-    #         os.makedirs(path)
-    #     except:
-    #         None
-
-    #     f = open(path+'summary.txt', 'w')
-    #     f.write('summary of analysis\n')
-    #     f.write('total time: ' + str(encl_dict['total_time']))
-    #     f.write('\n iterations: ' + str(it))
-    #     f.write('\n width: ' + str(encl_dict['width']) + ' tol: ' + str(tol))
-    #     f.write('\n # of MINLPs:' + str(sum(encl_dict['analysis'][str(i)]['problemcounter'] for i in np.arange(0,it))))
-    #     f.write('\n AVG time for MINLPs: ' + str(sum(encl_dict['analysis'][str(i)]['solution_time'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['problemcounter'] for i in np.arange(0,it))))
-
-    #     f.write('\n\n # of MINLPs per iteration:')
-    #     for i in np.arange(0,it):
-    #         f.write('\n # of MINLPs in iteration ' +str(i) +': ' + str(encl_dict['analysis'][str(i)]['problemcounter']))
-
-    #     f.write('\n\n AVG time for MINLPs per iteration:')
-    #     for i in np.arange(0,it):
-    #         f.write('\n AVG time for MINLPs in iteration ' +str(i) +': ' + str(encl_dict['analysis'][str(i)]['solution_time']/encl_dict['analysis'][str(i)]['problemcounter']))
-
-    #     f.close()

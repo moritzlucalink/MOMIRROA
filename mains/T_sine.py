@@ -20,11 +20,7 @@ from MOMIRROA import *
 from MOMIBB_direct import *
 
 """
-problem instance (P1) from
-Eichfelder, G. and Stein, O. and Warnow, L.
-A deterministic solver for multi-objective mixed-integer convex and nonconvex
-optimization.
-.... 2023.
+Test instance.
 """
 
 plt.close('all')

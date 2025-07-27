@@ -17,6 +17,10 @@ sys.path.append('../MOMIBB_methods')
 from MOMIRROA import *
 from MOMIBB_direct import *
 
+"""
+Runner script for testing different parameters and algorithms for TI22.
+"""
+
 tols = [0.1]#, 0.1, 0.05]
 delta_factors = [0.95]#, 0.1]#, 0.5]
 cons_tols = [1e-2, 1e-6]#, 1e-4, 1e-6]
@@ -152,32 +156,3 @@ for tol, method in iter.product(tols,
                 f.write('\nshare of enforced search zone improvement in' + str(i) + '-th iteration:' + str(encl_dict['analysis'][str(i)]['# of enforced feasibility check']/encl_dict['analysis'][str(i)]['# of search zones']))
 
             f.close()
-
-    # else:
-    #     encl_dict, it = compute_enclosure(build_model, parameter, options)
-
-    #     path = '~/Nextcloud/PhD/Dissertation/Numerics/TI22/tol'+str(tol)+\
-    #     '/deltafac'+str(delta_factor)+'/direct/loose_gap/'
-
-    #     try:
-    #         os.makedirs(path)
-    #     except:
-    #         None
-
-    #     f = open(path+'summary.txt', 'w')
-    #     f.write('summary of analysis\n')
-    #     f.write('total time: ' + str(encl_dict['total_time']))
-    #     f.write('\n iterations: ' + str(it))
-    #     f.write('\n width: ' + str(encl_dict['width']) + ' tol: ' + str(tol))
-    #     f.write('\n # of MINLPs:' + str(sum(encl_dict['analysis'][str(i)]['problemcounter'] for i in np.arange(0,it))))
-    #     f.write('\n AVG time for MINLPs: ' + str(sum(encl_dict['analysis'][str(i)]['solution_time'] for i in np.arange(0,it))/sum(encl_dict['analysis'][str(i)]['problemcounter'] for i in np.arange(0,it))))
-
-    #     f.write('\n\n # of MINLPs per iteration:')
-    #     for i in np.arange(0,it):
-    #         f.write('\n # of MINLPs in iteration ' +str(i) +': ' + str(encl_dict['analysis'][str(i)]['problemcounter']))
-
-    #     f.write('\n\n AVG time for MINLPs per iteration:')
-    #     for i in np.arange(0,it):
-    #         f.write('\n AVG time for MINLPs in iteration ' +str(i) +': ' + str(encl_dict['analysis'][str(i)]['solution_time']/encl_dict['analysis'][str(i)]['problemcounter']))
-
-    #     f.close()

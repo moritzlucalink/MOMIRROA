@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 28 20:20:21 2025
-
-@author: moritz
-"""
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
 Created on Sun Jun 23 12:32:43 2024
 
 @author: moritz
@@ -26,11 +18,7 @@ from MOMIRROA import *
 from MOMIBB_direct import *
 
 """
-problem instance (P1) from
-Eichfelder, G. and Stein, O. and Warnow, L.
-A deterministic solver for multi-objective mixed-integer convex and nonconvex
-optimization.
-.... 2023.
+Test instance.
 """
 
 plt.close('all')

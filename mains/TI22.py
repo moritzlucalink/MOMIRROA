@@ -62,7 +62,7 @@ def build_model(m):
 parameter = structure()
 parameter.m = 3
 parameter.tol = 0.1
-parameter.maxiter = 3000
+parameter.maxiter = 5000
 parameter.timeout = 3600
 parameter.factor_delta = 0.95 * parameter.tol
 

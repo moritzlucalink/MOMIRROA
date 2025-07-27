@@ -19,13 +19,11 @@ from MOMIBB_direct import *
 
 
 """
-problem instance (P3) with k=2 and n=2 from 
+problem instance (P3) with k=2 and l=2 from 
 Eichfelder, G., Stein, O., and Warnow, L. A Solver For Multiobjective
 Mixed-Integer Convex and Nonconvex Optimization. 2023 
  
 """
-
-import cProfile
 
 plt.close('all')
 
@@ -60,13 +58,12 @@ def build_model(m):
 
 # set up the parameters
 parameter = structure()
-parameter.m = 2
+parameter.m = 3
 parameter.tol = 0.1
-parameter.maxiter = 1000
+parameter.maxiter = 5000
 parameter.timeout = 3600
 parameter.factor_delta = 0.95 * parameter.tol
 
-# set up options
 # set up options
 options = structure()
 
@@ -76,17 +73,17 @@ options.gap_tolerance = 1e-4 # determine the gap if no relaxations are used
 
 options.show_plots = True # determine if plots should be shown
 
-options.nlp_feasibility_only = False # determine if NLP should be solved only to feasibility
+options.nlp_feasibility_only = True # determine if NLP should be solved only to feasibility
 
 options.constraint_tolerance = 1e-6 # determine constraint violation tolerance
 
-options.adaptive_refinement = True # determine if adaptive refinement procedure should be applied
+options.adaptive_refinement = False # determine if adaptive refinement procedure should be applied
 
 options.bound_tightening = 1e20 # determine if (and when) OBBT should be applied
 
 options.soft_utopian_check = True # determine if new utopian should be required to be not included in current utopians
 
-options.method = 'MOMIRROA' # determine which method should be applied
+options.method = 'Nothing' # determine which method should be applied
 
 
 if options.method == 'MOMIRROA':
