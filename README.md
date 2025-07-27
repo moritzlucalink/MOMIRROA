@@ -1,4 +1,4 @@
-[![DOI](https://sandbox.zenodo.org/badge/941646841.svg)](https://handle.stage.datacite.org/10.5072/zenodo.298833)
+[![DOI](https://zenodo.org/badge/941646841.svg)](https://doi.org/10.5281/zenodo.16493795)
 
 
 # Multi-objective-optimization
