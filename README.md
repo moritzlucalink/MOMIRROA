@@ -69,6 +69,7 @@ README file for codes related to
   		Eichfelder, G. and Stein, O. and Warnow, L.
   		A Solver for Multiobjective Mixed-Integer Convex and Nonconvex Optimization
   		Journal of Optimization Theory and Applications, 203, p. 1736-1766. 2023.
+  		available at: https://link.springer.com/article/10.1007/s10957-023-02285-2
 
 - the direct variant of MOMIBB is available as benchmark comparison in this repository
 - one can choose to use it via selecting 'MOMIBB' for options.method
